@@ -68,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +82,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registro2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

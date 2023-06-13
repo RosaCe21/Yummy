@@ -20,9 +20,14 @@ namespace Yummy
     public class Producto
     {
         public int codigo;
-        public Producto(int cod)
+        public string descripcion;
+        public float precio;
+        public Producto(int cod, string des,float precio)
         {
             this.codigo = cod;
+            this.descripcion = des;
+            this.precio = precio;
+
         }
 
     }

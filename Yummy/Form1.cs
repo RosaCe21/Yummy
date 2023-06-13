@@ -16,7 +16,8 @@ namespace Yummy
     {
         LisAsig lista = new LisAsig();
 
-        List<Cliente> listaclientes = new List<Cliente>();  
+        List<Cliente> listaclientes = new List<Cliente>();
+        List<Producto> listaproductos = new List<Producto>();
         public Form1()
 
         {
@@ -38,133 +39,69 @@ namespace Yummy
             listaclientes.Add(new Cliente(1211, "Ashley Medina"));
             listaclientes.Add(new Cliente(1212, "Keyla Medina"));
 
+            listaproductos.Add(new Producto(12345678,"galleta",1));
+            listaproductos.Add(new Producto(12345679,"chocolate",5));
+            listaproductos.Add(new Producto(12345680,"pastillas",1));
+            listaproductos.Add(new Producto(12345681,"jabon",10));
+
         }
-        
-        private void button2_Click(object sender, EventArgs e)
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "")
+            int ci = Int32.Parse(textBox3.Text);
+            Cliente aux = listaclientes.Find(cliente => cliente.carnet == ci);
+            if (aux != null)
             {
-                MessageBox.Show("Inserte datos por favor");
-                return;
+                textBox4.Text = aux.nombreCompleto;
             }
             else
             {
-                textBox1.Focus();
-                lista.crearLista(textBox1.Text, int.Parse(textBox2.Text));
-                textBox1.Clear();
-                textBox2.Clear();
+                MessageBox.Show("No se Encontro al cliente", "Venta de Productos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-        private void Eliminar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Focus();
-            if (lista.vacia())
+            int cod = Int32.Parse(textBox1.Text);
+            Producto aux = listaproductos.Find(producto => producto.codigo == cod);
+            if (aux != null)
             {
-                MessageBox.Show("No hay elementos para eliminar");
-                return;
+                dgv.Rows.Add(aux.descripcion, aux.precio.ToString());
             }
             else
             {
-                if (textBox1.Text != "")
-                {
-                    lista.eliminarLista(textBox1.Text);
-                }
-                else
-                    MessageBox.Show("Lista esta vacia");
+                MessageBox.Show("No se Encontro el producto", "Venta de Productos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            textBox1.Clear();
-            textBox2.Clear();
         }
 
-        private void Anterior_Click(object sender, EventArgs e)
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
         {
-            if (lista.vacia())
+            if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show("Lista vacia");
-            }
-            else
-            {
-
-
-
-                Nodo t;
-                t = lista.getCursor();
-                if (t == lista.primero)
-                {
-                    MessageBox.Show("No existe elemento anterior, se encuentra al principio de la lista");
-                    return;
-                }
-                else
-                {
-                    t = lista.getAntCursor();
-                    textBox1.Text = ((NodoPedido)t).damePedido();
-                    textBox2.Text = ((NodoPedido)t).dameCantidad().ToString();
-                    lista.cursor = t;
-                    return;
-                }
-
-
+                button3_Click(sender, e);
             }
         }
-
-        private void Siguiente_Click(object sender, EventArgs e)
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (lista.vacia())
+            if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show("Lista vacia");
+                button1_Click(sender, e);
             }
-            else
-            {
-                Nodo x;
-                x = lista.getCursor();
-                if (x == lista.ultimo)
-                {
-                    MessageBox.Show("No existe elemento siguiente, se encuentra al final de la lista");
-                    return;
-                }
-                else
-                {
-                    x = lista.getProxCursor();
-                    textBox1.Text = ((NodoPedido)x).damePedido();
-                    textBox2.Text = ((NodoPedido)x).dameCantidad().ToString();
-                    lista.cursor = x;
-                    return;
-                }
-            }
-        }
 
-        private void Primero_Click(object sender, EventArgs e)
+        }
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            if (lista.vacia())
-                MessageBox.Show("Lista vacia");
-            else
+            int cant = Int32.Parse(textBox2.Text);
+            int cod = Int32.Parse(textBox1.Text);
+            Producto aux = listaproductos.Find(producto => producto.codigo == cod);
+            if (aux != null)
             {
-                Nodo m;
-                m = lista.getPrimero();
-                MessageBox.Show("Primer elemento: " + ((NodoPedido)m).damePedido());
-            }
-        }
 
-        private void Último_Click(object sender, EventArgs e)
-        {
-            if (lista.vacia())
-                MessageBox.Show("Lista vacia");
-            else
-            {
-                Nodo ab;
-                ab = lista.getUltimo();
-                MessageBox.Show("Ultimo elemento: " + ((NodoPedido)ab).damePedido());
+                MessageBox.Show(cant + " " + aux.descripcion + " precio unit. " + aux.precio.ToString() + " SubTotal" + cant * aux.precio, "Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgv.Rows.Add(aux.descripcion, aux.precio.ToString());
             }
-        }
 
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -179,79 +116,26 @@ namespace Yummy
 
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            //if (textBox1.Text == "" || textBox2.Text == "")
-            //{
-            //    MessageBox.Show("Inserte datos por favor");
-            //    return;
-            //}
-            //else
-            //{
-                //textBox1.Focus();
-                //lista.crearLista(textBox1.Text, int.Parse(textBox2.Text));
-                //textBox1.Clear();
-                //textBox2.Clear();
-
-                listaclientes.Add(new Cliente( int.Parse(textBox3.Text), textBox4.Text ));
-            MessageBox.Show("Cliente registrado");
-            //}
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int ci = Int32.Parse(textBox4.Text);
-            Cliente aux = listaclientes.Find(cliente => cliente.carnet == ci);
-            if (aux != null)
-            {
-                textBox4.Text = aux.nombreCompleto;
-            }
-            else
-            {
-                MessageBox.Show("No se Encontro al cliente", "Venta de Productos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
         {
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            
+    }
 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int ci = Int32.Parse(  textBox3.Text);
-            Cliente aux = listaclientes.Find(cliente => cliente.carnet == ci);
-            if(aux != null)
-            {
-                textBox4.Text = aux.nombreCompleto;
-            }
-            else
-            {
-                MessageBox.Show("No se Encontro al cliente", "Venta de Productos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void textBox3_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                button3_Click(sender, e);
-            }
-        }
-
+       
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
     }
 }
+
