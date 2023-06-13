@@ -44,10 +44,13 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.butBuscar = new System.Windows.Forms.Button();
             this.Registrar = new System.Windows.Forms.Button();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lemon", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 340);
+            this.label1.Location = new System.Drawing.Point(59, 323);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(280, 36);
             this.label1.TabIndex = 0;
@@ -63,7 +66,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(325, 345);
+            this.textBox1.Location = new System.Drawing.Point(345, 323);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(357, 31);
             this.textBox1.TabIndex = 1;
@@ -74,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lemon", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(820, 345);
+            this.label2.Location = new System.Drawing.Point(918, 350);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 36);
             this.label2.TabIndex = 2;
@@ -82,16 +85,17 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(1002, 350);
+            this.textBox2.Location = new System.Drawing.Point(1100, 355);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 31);
             this.textBox2.TabIndex = 3;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.Location = new System.Drawing.Point(700, 340);
+            this.button1.Location = new System.Drawing.Point(739, 340);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 51);
             this.button1.TabIndex = 4;
@@ -102,26 +106,29 @@
             // Añadir
             // 
             this.Añadir.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Añadir.Location = new System.Drawing.Point(1118, 344);
+            this.Añadir.Location = new System.Drawing.Point(1216, 349);
             this.Añadir.Name = "Añadir";
             this.Añadir.Size = new System.Drawing.Size(100, 42);
             this.Añadir.TabIndex = 5;
             this.Añadir.Text = "Añadir";
             this.Añadir.UseVisualStyleBackColor = false;
             this.Añadir.Click += new System.EventHandler(this.button2_Click_1);
+            this.Añadir.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // dgv
             // 
             this.dgv.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
             this.Column1,
-            this.Column2});
-            this.dgv.Location = new System.Drawing.Point(45, 409);
+            this.Column2,
+            this.Column4});
+            this.dgv.Location = new System.Drawing.Point(45, 441);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 82;
-            this.dgv.Size = new System.Drawing.Size(1189, 225);
+            this.dgv.Size = new System.Drawing.Size(1319, 252);
             this.dgv.TabIndex = 23;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
@@ -186,7 +193,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(410, 668);
+            this.button5.Location = new System.Drawing.Point(465, 700);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(200, 80);
             this.button5.TabIndex = 34;
@@ -196,7 +203,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(731, 668);
+            this.button6.Location = new System.Drawing.Point(789, 700);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(200, 80);
             this.button6.TabIndex = 35;
@@ -205,10 +212,47 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(376, 296);
+            this.textBox5.Location = new System.Drawing.Point(194, 382);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(331, 31);
+            this.textBox5.Size = new System.Drawing.Size(286, 31);
             this.textBox5.TabIndex = 36;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // butBuscar
+            // 
+            this.butBuscar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.butBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.butBuscar.Cursor = System.Windows.Forms.Cursors.No;
+            this.butBuscar.Font = new System.Drawing.Font("Ravie", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.butBuscar.Image = global::Yummy.Properties.Resources.buscar3;
+            this.butBuscar.Location = new System.Drawing.Point(937, 167);
+            this.butBuscar.Name = "butBuscar";
+            this.butBuscar.Size = new System.Drawing.Size(146, 123);
+            this.butBuscar.TabIndex = 29;
+            this.butBuscar.UseVisualStyleBackColor = false;
+            this.butBuscar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // Registrar
+            // 
+            this.Registrar.BackColor = System.Drawing.Color.IndianRed;
+            this.Registrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Registrar.Font = new System.Drawing.Font("Ravie", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registrar.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Registrar.Image = global::Yummy.Properties.Resources.registro2;
+            this.Registrar.Location = new System.Drawing.Point(1146, 172);
+            this.Registrar.Name = "Registrar";
+            this.Registrar.Size = new System.Drawing.Size(161, 118);
+            this.Registrar.TabIndex = 26;
+            this.Registrar.UseVisualStyleBackColor = false;
+            this.Registrar.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Cantidad";
+            this.Column3.MinimumWidth = 10;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
             // 
             // Column1
             // 
@@ -225,40 +269,26 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 162;
             // 
-            // butBuscar
+            // Column4
             // 
-            this.butBuscar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.butBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.butBuscar.Cursor = System.Windows.Forms.Cursors.No;
-            this.butBuscar.Font = new System.Drawing.Font("Ravie", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.butBuscar.Image = global::Yummy.Properties.Resources.buscar3;
-            this.butBuscar.Location = new System.Drawing.Point(941, 181);
-            this.butBuscar.Name = "butBuscar";
-            this.butBuscar.Size = new System.Drawing.Size(74, 70);
-            this.butBuscar.TabIndex = 29;
-            this.butBuscar.UseVisualStyleBackColor = false;
-            this.butBuscar.Click += new System.EventHandler(this.button3_Click);
+            this.Column4.HeaderText = "SubTotal";
+            this.Column4.MinimumWidth = 10;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
             // 
-            // Registrar
+            // textBox6
             // 
-            this.Registrar.BackColor = System.Drawing.Color.IndianRed;
-            this.Registrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Registrar.Font = new System.Drawing.Font("Ravie", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Registrar.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Registrar.Image = global::Yummy.Properties.Resources.registro2;
-            this.Registrar.Location = new System.Drawing.Point(1042, 181);
-            this.Registrar.Name = "Registrar";
-            this.Registrar.Size = new System.Drawing.Size(89, 63);
-            this.Registrar.TabIndex = 26;
-            this.Registrar.UseVisualStyleBackColor = false;
-            this.Registrar.Click += new System.EventHandler(this.button2_Click_1);
+            this.textBox6.Location = new System.Drawing.Point(602, 382);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 31);
+            this.textBox6.TabIndex = 37;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1476, 856);
+            this.ClientSize = new System.Drawing.Size(1476, 836);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -306,8 +336,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
 

@@ -65,7 +65,8 @@ namespace Yummy
             Producto aux = listaproductos.Find(producto => producto.codigo == cod);
             if (aux != null)
             {
-                dgv.Rows.Add(aux.descripcion, aux.precio.ToString());
+                textBox5.Text = aux.descripcion;
+                textBox6.Text = aux.precio.ToString();
             }
             else
             {
@@ -93,11 +94,21 @@ namespace Yummy
             int cant = Int32.Parse(textBox2.Text);
             int cod = Int32.Parse(textBox1.Text);
             Producto aux = listaproductos.Find(producto => producto.codigo == cod);
+            float subt = cant * aux.precio;
             if (aux != null)
             {
 
-                MessageBox.Show(cant + " " + aux.descripcion + " precio unit. " + aux.precio.ToString() + " SubTotal" + cant * aux.precio, "Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgv.Rows.Add(aux.descripcion, aux.precio.ToString());
+                //MessageBox.Show(cant + " " + aux.descripcion + " precio unit. " + aux.precio.ToString() + " SubTotal" + cant * aux.precio, "Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgv.Rows.Add(cant.ToString(), aux.descripcion, aux.precio.ToString(), subt.ToString());
+                
+            }
+
+        }
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button2_Click_1(sender, e);
             }
 
         }
@@ -105,34 +116,32 @@ namespace Yummy
         {
 
         }
-
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             
     }
-
-       
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
         private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
