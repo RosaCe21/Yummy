@@ -87,9 +87,6 @@
     <None Include="Resources\lupa.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lu.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lu2.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +118,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscar3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

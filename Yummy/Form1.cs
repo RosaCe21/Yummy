@@ -98,7 +98,7 @@ namespace Yummy
             if (aux != null)
             {
 
-                //MessageBox.Show(cant + " " + aux.descripcion + " precio unit. " + aux.precio.ToString() + " SubTotal" + cant * aux.precio, "Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(cant + " " + aux.descripcion + " precio unit. " + aux.precio.ToString() + " SubTotal" + cant * aux.precio, "Factura", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgv.Rows.Add(cant.ToString(), aux.descripcion, aux.precio.ToString(), subt.ToString());
                 
             }
@@ -140,8 +140,11 @@ namespace Yummy
         {
 
         }
-
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
